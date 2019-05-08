@@ -136,7 +136,7 @@ Humanoid.prototype.greet = function(){
     Humanoid.call(this, args);
   }
   Hero.prototype = Object.create(Humanoid.prototype);
-  Hero.attack = function(target, dmg){
+  Hero.prototype.attack = function(target, dmg){
     target.healthPoints -= dmg;
     if (target.healthPoints <= 0){
       target.destroy();
@@ -149,3 +149,41 @@ Humanoid.prototype.greet = function(){
     Humanoid.call(this, args);
   }
   Villain.prototype = Object.create(Hero.prototype);
+
+  const aaron = new Hero({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 100,
+    name: 'Aaron',
+    team: 'Students',
+    weapons: [
+      'Keyboard',
+      'A forgotten A Level in Further Maths',
+    ],
+    language: 'C',
+  });
+
+  const sorin = new Villain({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 100,
+    name: 'Sorin Chris',
+    team: "The PM's",
+    weapons: [
+      'Keyboard',
+      'Airtable forms',
+    ],
+    language: 'Java',
+  });
+
+  console.log(aaron.attack(sorin, 50));
+  console.log(sorin.attack(aaron, 80));
+  console.log(aaron.attack(sorin, 9000));
