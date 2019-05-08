@@ -1,10 +1,10 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. Implicit binding. This is when 'this' is binded the the object that the function is being called from.
+* 1. Implicit binding. This is when 'this' is binded to the object that the function is being called from.
 
-* 2. Global object binding. This is when the function is called independantly of any object and called globally. 
-    'this' will refer to a global object. In browsers this is the 'window' object. If 'use strict' is applied,
+* 2. Global object binding. This is when the function is called independently of any object and called globally. 
+    'this' will refer to the global object. In browsers this is the 'window' object. If 'use strict' is applied,
     The global object will be undefined and therefore so will 'this'.
 
 * 3. New binding. When a constructor function is used with the 'new' keyword, 'this' will be provided to the function as an empty object of type defined
